@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from 'motion/react';
-import { MessageCircle, Sparkles, Chrome, Phone } from 'lucide-react';
+import { Brain, Sparkles, Chrome, Phone } from 'lucide-react';
 import { Button } from './ui/button';
 import { useAuth } from './AuthProvider';
 import dynamic from 'next/dynamic';
@@ -30,13 +30,16 @@ export default function LandingPage() {
           className="mb-8"
         >
           <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full mb-6">
-            <MessageCircle className="w-10 h-10 text-white" />
+            <Brain className="w-10 h-10 text-white" />
           </div>
           <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
-            Talk to Me
+            Speako.in
           </h1>
-          <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
-            Experience the future of voice interaction with AI
+          <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
+            Your AI Mentor & Tutor
+          </p>
+          <p className="text-base text-gray-500 dark:text-gray-400 mb-8 max-w-sm mx-auto">
+            Ask anything and get intelligent suggestions, guidance, and answers from your personal AI mentor. Perfect for learning, problem-solving, and getting expert advice on any topic.
           </p>
           
           {/* Conditional Button: Google Sign In or Start Call */}
@@ -52,7 +55,7 @@ export default function LandingPage() {
                 className="w-full h-14 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-2 border-gray-200 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 shadow-lg hover:shadow-xl transition-all duration-200 text-lg font-semibold"
               >
                 <Chrome className="w-6 h-6 mr-3" />
-                Continue with Google
+                Login with Google
               </Button>
             ) : (
               // Show Start Call button when authenticated
@@ -65,22 +68,13 @@ export default function LandingPage() {
                   className="w-full h-14 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-200 text-lg"
                 >
                   <Phone className="w-6 h-6 mr-3" />
-                  Start Call
+                  Start Learning
                 </Button>
               </div>
             )}
           </motion.div>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="flex items-center justify-center gap-2 text-sm text-gray-500 dark:text-gray-400"
-        >
-          <Sparkles className="w-4 h-4" />
-          <span>Powered by Hume AI</span>
-        </motion.div>
       </div>
     </div>
   );

@@ -51,7 +51,7 @@ export default function StartCall({ configId, accessToken }: { configId?: string
                     strokeWidth={0}
                   />
                 </span>
-                <span>Start Call</span>
+                <span>Start Learning</span>
               </Button>
             </motion.div>
           </AnimatePresence>

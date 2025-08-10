@@ -76,7 +76,7 @@ export default function AuthForm() {
           className="w-full h-12 text-gray-700 dark:text-gray-300 border-2 border-gray-200 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700"
         >
           <Chrome className="w-5 h-5 mr-3" />
-          Continue with Google
+          Login with Google
         </Button>
 
         <div className="relative">

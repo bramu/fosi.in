@@ -1,8 +1,8 @@
 {
-  "name": "hume-evi-next-js-starter",
+  "name": "speako-in",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/humeai/hume-evi-next-js-starter",
+  "homepage": "https://www.speako.in",
   "scripts": {
     "dev": "next dev -p 8000",
     "build": "next build",

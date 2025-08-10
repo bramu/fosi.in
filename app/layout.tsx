@@ -9,8 +9,8 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import { AuthProvider } from "@/components/AuthProvider";
 
 export const metadata: Metadata = {
-  title: "Hume AI - EVI - Next.js Starter",
-  description: "A Next.js starter using Hume AI's Empathic Voice Interface",
+  title: "Speako.in - Your AI Mentor & Tutor",
+  description: "Ask anything and get intelligent suggestions, guidance, and answers from your personal AI mentor. Perfect for learning, problem-solving, and getting expert advice.",
 };
 
 export default function RootLayout({
