@@ -42,10 +42,9 @@ export default function AuthForm() {
   const handleGoogleSignIn = async () => {
     setLoading(true);
     try {
-      // For now, we'll show a toast message since Google OAuth needs additional setup
-      toast.info('Google sign-in will be available soon! Please use email/password for now.');
+      await signInWithGoogle();
     } catch (error: any) {
-      toast.error('Google sign-in is not available yet');
+      toast.error('Google sign-in failed. Please try again.');
     } finally {
       setLoading(false);
     }
