@@ -1,45 +1,44 @@
 "use client";
 
 import { Button } from "./ui/button";
-import { Moon, Sun } from "lucide-react";
-import Github from "./logos/GitHub";
-import pkg from "@/package.json";
-import { useTheme } from "next-themes";
+import { LogOut, User } from "lucide-react";
+import { useAuth } from "./AuthProvider";
 
 export const Nav = () => {
-  const { theme, setTheme } = useTheme();
+  const { user, signOut } = useAuth();
+
+  const handleSignOut = async () => {
+    try {
+      await signOut();
+    } catch (error) {
+      console.error('Error signing out:', error);
+    }
+  };
 
   return (
     <div
       className={"fixed top-0 right-0 px-4 py-2 flex items-center h-14 z-50"}
     >
       <div className={"ml-auto flex items-center gap-1"}>
-        <Button
-          onClick={() => {
-            window.open(pkg.homepage, "_blank", "noopener noreferrer");
-          }}
-          variant={"ghost"}
-          className={"ml-auto flex items-center gap-1.5 rounded-full"}
-        >
-          <span>
-            <Github className={"size-4"} />
-          </span>
-          <span>Star on GitHub</span>
-        </Button>
-        <Button
-          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-          variant={"ghost"}
-          className={"ml-auto flex items-center gap-1.5 rounded-full"}
-        >
-          <span>
-            {theme === "dark" ? (
-              <Sun className={"size-4"} />
-            ) : (
-              <Moon className={"size-4"} />
-            )}
-          </span>
-          <span>{theme === 'dark' ? "Light" : "Dark"} Mode</span>
-        </Button>
+        {user && (
+          <div className="flex items-center gap-2 mr-4">
+            <div className="flex items-center gap-2 px-3 py-1 bg-muted rounded-full">
+              <User className="size-4 text-muted-foreground" />
+              <span className="text-sm text-muted-foreground">
+                {user.email}
+              </span>
+            </div>
+            <Button
+              onClick={handleSignOut}
+              variant={"ghost"}
+              className={"flex items-center gap-1.5 rounded-full"}
+              size="sm"
+            >
+              <LogOut className={"size-4"} />
+              <span>Sign Out</span>
+            </Button>
+          </div>
+        )}
       </div>
     </div>
   );
